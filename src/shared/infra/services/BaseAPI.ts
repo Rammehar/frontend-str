@@ -18,5 +18,18 @@ export abstract class BaseAPI {
       headers: headers ? headers : null,
     });
   }
-  protected post() {}
+
+  protected post(
+    url: string,
+    data?: any,
+    params?: any,
+    headers?: any,
+    onUploadProgress?: (progressEvent: any) => void
+  ): Promise<any> {
+    return this.axiosInstance.post(`${url}`, data ? data : null, {
+      params: params ? params : null,
+      headers: headers ? headers : null,
+      onUploadProgress,
+    });
+  }
 }

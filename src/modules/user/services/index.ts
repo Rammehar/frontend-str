@@ -1,3 +1,5 @@
 import { UserService } from "./userService";
 
-export { UserService };
+const userService = new UserService();
+
+export { userService };
